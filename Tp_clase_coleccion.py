@@ -44,7 +44,5 @@ else:
 
 
 
-
-
 '''// se creo la clase collecion que manejara los documentos
 puede agregar,eliminar,buscar'''
