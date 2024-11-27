@@ -1,8 +1,8 @@
 # main.py
-from Tp_clase_basedatos import *
-from Tp_clase_coleccion import *
-from Tp_clase_documentos import *
-from Tp_clase_stringadicc import *
+from Tp_clase_basedatos   import  *
+from Tp_clase_coleccion   import  *
+from Tp_clase_documentos  import  *
+from Tp_clase_stringadicc import  *
 
 def mostrar_menu():
     print("\n--- Base de Datos Documental ---")
@@ -30,7 +30,7 @@ def main():
             coleccion = db.obtener_coleccion(nombre_coleccion)
             ruta_csv = input("Ingrese la ruta del archivo CSV: ")
             coleccion.importar_coleccion(ruta_csv)
-            '''agragar funcion que informe el estado del archivo csv '''
+            '''agragar funcion que informe el estado del archivo csv (exitoso o reporte de un problema (error ruta)) '''
         elif opcion == "3":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             doc_id = int(input("Ingrese el ID del documento: "))
@@ -44,19 +44,19 @@ def main():
                     print("Documento no encontrado.")
             else:
                 print(f"Colección '{nombre_coleccion}' no encontrada.")
-        
         elif opcion == "4":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
-            doc_id = input("Ingrese el ID del documento a eliminar: ")
+            doc_id = int(input("Ingrese el ID del documento a eliminar: "))
             coleccion = db.obtener_coleccion(nombre_coleccion)
             if coleccion:
                 coleccion.eliminar_documento(doc_id)
-             
+            '''problemas con eliminar un documento.'''
         elif opcion == "5":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             coleccion = db.obtener_coleccion(nombre_coleccion)
+            print(coleccion)
             coleccion.lista_documentos(coleccion)
-            
+            ''' falta un verficador de coleccion '''
         elif opcion == "6":
             print("Saliendo del programa.")
             break
