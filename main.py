@@ -26,6 +26,7 @@ def main():
             print(f"Colección '{nombre_coleccion}' creada.")
         
         elif opcion == "2":
+
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             coleccion = db.obtener_coleccion(nombre_coleccion)
             ruta_csv = input("Ingrese la ruta del archivo CSV: ")
@@ -60,7 +61,7 @@ def main():
                     print("\n--- Lista de Documentos ---")
                     for doc in documentos:
                         print(doc)
-                        print("-----------")
+                        print("-"*50)
                 else:
                     print("No hay documentos en la colección.")
 
