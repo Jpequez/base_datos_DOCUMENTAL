@@ -34,7 +34,7 @@ class Coleccion(object):
             i = i+1
             line = file.readline()
          
-   def lista_coleccion (self, valor ):
+   def lista_documentos (self, valor):
       i = 1 
       while valor.buscar_documento(i) != None:
          print (valor.buscar_documento(i))
