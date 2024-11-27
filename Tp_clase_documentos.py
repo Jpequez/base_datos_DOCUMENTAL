@@ -19,8 +19,8 @@ class Documento(object):
 
 # #obtenemos un valor que no existe
 # nombre = d.obtenervalor('nombre') # intencionalmente buscamos un valor que no existe dejando una imprension "no existente"
-# if not d.obtenervalor('direccion'):
-#    print("no existe la direccion")
+# if not d.obtenervalor('dirececciocion'):
+#    print("no existe la dirn")
 # #obtenemos un valor existente#
 # print (d.obtenervalor('nombre'))  # cuando no se encuentra tira un none (no definido)
 # #actualizamos o agragamos un valor#

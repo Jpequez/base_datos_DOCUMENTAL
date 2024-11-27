@@ -1,5 +1,5 @@
-from Tp_clase_documentos import Documento
-from Tp_clase_stringadicc import string_A_dicc
+from Tp_clase_documentos import *
+from Tp_clase_stringadicc import *
 
 '''2.creamos la clase coleccion '''
 
@@ -11,9 +11,9 @@ class Coleccion(object):
    def agregar_documentos(self,documento):
       self.documentos[documento.id] = documento
 
-   def eliminar_documento (self, id_documento):
+   def eliminar_documento(self, id_documento):
       if id_documento in self.documentos:
-         del self.documentos[id_documento]
+        del self.documentos[id_documento]
 
    def buscar_documento(self, id_documento):
       return self.documentos.get(id_documento, None)
