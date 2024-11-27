@@ -2,8 +2,8 @@
 from Tp_clase_basedatos import *
 from Tp_clase_coleccion import *
 from Tp_clase_documentos import *
-from Tp_clase_stringadicc import string_A_dicc
-a = Coleccion
+from Tp_clase_stringadicc import *
+
 b = Documento
 def mostrar_menu():
     print("\n--- Base de Datos Documental ---")
@@ -30,8 +30,8 @@ def main():
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             collection = db.obtener_coleccion(nombre_coleccion)
             ruta_csv = input("Ingrese la ruta del archivo CSV: ")
-            collection.import_csv(nombre_coleccion, ruta_csv)
-        
+            collection.importar_coleccion(nombre_coleccion, ruta_csv)
+            '''agragar funcion que informe el estado del archivo csv '''
         elif opcion == "3":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             doc_id = int(input("Ingrese el ID del documento: "))

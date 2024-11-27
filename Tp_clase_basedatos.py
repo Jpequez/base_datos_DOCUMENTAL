@@ -1,6 +1,5 @@
 from Tp_clase_coleccion import  Coleccion
-from Tp_clase_stringadicc import string_A_dicc
-from Tp_clase_documentos import Documento
+
 class BasededatosDocumental (object):
     def __init__(self):
         self.colecciones= {}
@@ -20,9 +19,9 @@ class BasededatosDocumental (object):
         return f"Coleccion{self.nombre} con {len(self.documentos)} documentos."
     
 
-D = Coleccion ("libros")
+# D = Coleccion ("libros")
 
-a = BasededatosDocumental()
+# a = BasededatosDocumental()
 
-a.crear_coleccion("pelis")
+# a.crear_coleccion("pelis")
 

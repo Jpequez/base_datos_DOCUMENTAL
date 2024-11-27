@@ -22,48 +22,48 @@ class Coleccion(object):
       return f"Coleccion {self.nombre} con {len(self.documentos)} documentos"
    
    def importar_coleccion(self, ruta_archivo):
-      with open (ruta_archivo , 'rt') as file:
-         schema = file.readline().replace("\n","")
+      with open (ruta_archivo , 'r') as file:
+         schema =file.readline().replace("\n", "")
          parser = string_A_dicc(schema)
          i = 0 
          line = file.readline()
 
          while line != "":
-            d = Documento(1,parser.convertidor(line))
+            d = Documento(i,parser.convertidor(line.strip()))
             self.agregar_documentos(d)
             i = i+1
             line = file.readline()
          
 
 
-c = Coleccion('Libros')
+# c = Coleccion('Libros')
 
-libro1 = Documento(1,{'Titulo':'Python para todos', 'Autor': 'Teto Medina'})
-libro2 = Documento(2,{'Titulo': 'Fundamentos del lenguaje ', 'Autor': 'Eduso'})
-#agregamos un libro a nuestra collecion "libros"
-c.agregar_documentos(libro1)
-c.agregar_documentos(libro2)
-#buscamos un documento
-libro = c.buscar_documento(1)
-print (libro.obtenervalor('Titulo'), libro.obtenervalor('Autor'))
+# libro1 = Documento(1,{'Titulo':'Python para todos', 'Autor': 'Teto Medina'})
+# libro2 = Documento(2,{'Titulo': 'Fundamentos del lenguaje ', 'Autor': 'Eduso'})
+# #agregamos un libro a nuestra collecion "libros"
+# c.agregar_documentos(libro1)
+# c.agregar_documentos(libro2)
+# #buscamos un documento
+# libro = c.buscar_documento(1)
+# print (libro.obtenervalor('Titulo'), libro.obtenervalor('Autor'))
 
-#borramos un documento
-c.eliminar_documento(libro.id)
+# #borramos un documento
+# c.eliminar_documento(libro.id)
 
-#buscador para libros
-libro = c.buscar_documento(1)
-if libro is not None:
-   print(libro.obtenervalor('Titulo'), libro.obtenervalor('Autor'))
-else:
-   print("El libro no existe mas")
+# #buscador para libros
+# libro = c.buscar_documento(1)
+# if libro is not None:
+#    print(libro.obtenervalor('Titulo'), libro.obtenervalor('Autor'))
+# else:
+#    print("El libro no existe mas")
 
 # funcion importar archivo 
 
-direccion = "C:\\Users\CHELO\Documents\\GitHub\\base_datos_DOCUMENTAL\\datos_personales.csv"
-test = Coleccion ("prueba01")
-test.importar_coleccion(direccion)
-print(test)
-print(test.buscar_documento(1))
+direccion = "C:\\Users\\CHELO\\Documents\\GitHub\\base_datos_DOCUMENTAL\\datos_personales.csv"
+prueba = Coleccion ("prueba01")
+prueba.importar_coleccion(direccion)
+print(prueba)
+print(prueba.buscar_documento(3))
 '''// se creo la clase collecion que manejara los documentos
 puede agregar,eliminar,buscar'''
 

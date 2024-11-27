@@ -54,26 +54,26 @@ class Coleccion(object):
       return f"Coleccion {self.nombre} con {len(self.documentos)} documentos"
 
 
-c = Coleccion('Libros')
+# c = Coleccion('Libros')
 
-libro1 = Documento(1,{'Titulo':'Python para todos', 'Autor': 'Teto Medina'})
-libro2 = Documento(2,{'Titulo': 'Fundamentos del lenguaje ', 'Autor': 'Eduso'})
-#agregamos un libro a nuestra collecion "libros"
-c.agregar_documentos(libro1)
-c.agregar_documentos(libro2)
-#buscamos un documento
-libro = c.buscar_documento(1)
-print (libro.obtenervalor('Titulo'), libro.obtenervalor('Autor'))
+# libro1 = Documento(1,{'Titulo':'Python para todos', 'Autor': 'Teto Medina'})
+# libro2 = Documento(2,{'Titulo': 'Fundamentos del lenguaje ', 'Autor': 'Eduso'})
+# #agregamos un libro a nuestra collecion "libros"
+# c.agregar_documentos(libro1)
+# c.agregar_documentos(libro2)
+# #buscamos un documento
+# libro = c.buscar_documento(1)
+# print (libro.obtenervalor('Titulo'), libro.obtenervalor('Autor'))
 
-#borramos un documento
-c.eliminar_documento(libro.id)
+# #borramos un documento
+# c.eliminar_documento(libro.id)
 
-#buscador para libros
-libro = c.buscar_documento(1)
-if libro is not None:
-   print(libro.obtenervalor('Titulo'), libro.obtenervalor('Autor'))
-else:
-   print("El libro no existe mas")
+# #buscador para libros
+# libro = c.buscar_documento(1)
+# if libro is not None:
+#    print(libro.obtenervalor('Titulo'), libro.obtenervalor('Autor'))
+# else:
+#    print("El libro no existe mas")
 
 
 

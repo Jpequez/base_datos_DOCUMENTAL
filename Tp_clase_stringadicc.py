@@ -9,7 +9,7 @@ class string_A_dicc(object):
 
     def convertidor (self, row):
         tempo = row.split(self.seperator)
-        if len(tempo)== len(self.schema):
+        if len(tempo)==len(self.schema):
          i = 0 
          dicc = {}
          while i < len(tempo):
@@ -20,8 +20,8 @@ class string_A_dicc(object):
             i = i+1
         return dicc
 
-o = string_A_dicc(schema)
-print(o.schema)
+# o = string_A_dicc(schema)
+# print(o.schema)
 
-d = o.convertidor(row)
-print (d)
+# d = o.convertidor(row)
+# print (d)
