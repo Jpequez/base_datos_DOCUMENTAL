@@ -55,7 +55,7 @@ def main():
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             coleccion = db.obtener_coleccion(nombre_coleccion)
             if coleccion:
-                documentos = coleccion.lista_documentos()
+                documentos = coleccion.lista_documentos ()
                 if documentos:
                     print("\n--- Lista de Documentos ---")
                     for doc in documentos:
