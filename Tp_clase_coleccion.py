@@ -33,11 +33,11 @@ class Coleccion(object):
             line = file.readline()
          
          
-   def lista_documento(self) -> list[Documento]:
-      total= []
+   def lista_documento(self):
+      listadedocumentos = []
       for i in self.documentos:
-         total.append(self.documentos[i])
-      return total
+         listadedocumentos.append(self.documentos[i])
+      return listadedocumentos
    
 
    def __str__(self):
