@@ -22,10 +22,10 @@ class Coleccion(object):
       return f"Coleccion {self.nombre} con {len(self.documentos)} documentos"
    
    def importar_coleccion(self, ruta_archivo):
-      with open (ruta_archivo , 'r') as file:
+      with open (ruta_archivo , 'rt') as file:
          schema =file.readline().replace("\n", "")
          parser = string_A_dicc(schema)
-         i = 0 
+         i = 1 
          line = file.readline()
 
          while line != "":
@@ -34,6 +34,11 @@ class Coleccion(object):
             i = i+1
             line = file.readline()
          
+   def lista_coleccion (self, valor ):
+      i = 1 
+      while valor.buscar_documento(i) != None:
+         print (valor.buscar_documento(i))
+         i = i + 1
 
 
 # c = Coleccion('Libros')
@@ -59,12 +64,16 @@ class Coleccion(object):
 
 # funcion importar archivo 
 
-direccion = "C:\\Users\\CHELO\\Documents\\GitHub\\base_datos_DOCUMENTAL\\datos_personales.csv"
-prueba = Coleccion ("prueba01")
-prueba.importar_coleccion(direccion)
-print(prueba)
-print(prueba.buscar_documento(3))
-'''// se creo la clase collecion que manejara los documentos
-puede agregar,eliminar,buscar'''
+# direccion = "C:\\Users\\CHELO\\Documents\\GitHub\\base_datos_DOCUMENTAL\\datos_personales.csv"
+# prueba = Coleccion ("prueba01")
+# prueba.importar_coleccion(direccion)
+# print(prueba)
+# print(prueba.buscar_documento(2))
+# '''// se creo la clase collecion que manejara los documentos
+# puede agregar,eliminar,buscar'''
 
 
+# c = Coleccion ("prueba1 ")
+# direccion = "C:\\Users\\CHELO\\Documents\\GitHub\\base_datos_DOCUMENTAL\\datos_personales.csv"
+# c.importar_coleccion(direccion)
+# c.lista_coleccion(c)

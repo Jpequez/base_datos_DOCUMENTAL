@@ -4,7 +4,6 @@ from Tp_clase_coleccion import *
 from Tp_clase_documentos import *
 from Tp_clase_stringadicc import *
 
-b = Documento
 def mostrar_menu():
     print("\n--- Base de Datos Documental ---")
     print("1. Crear colección")
