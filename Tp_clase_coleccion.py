@@ -18,8 +18,6 @@ class Coleccion(object):
    def buscar_documento(self, id_documento):
       return self.documentos.get(id_documento, None)
 
-   def __str__(self):
-      return f"Coleccion {self.nombre} con {len(self.documentos)} documentos"
    
    def importar_coleccion(self, ruta_archivo):
       with open(ruta_archivo , 'r') as file:
@@ -43,3 +41,5 @@ class Coleccion(object):
       return total
    
 
+   def __str__(self):
+      return f"Coleccion {self.nombre} con {len(self.documentos)} documentos"

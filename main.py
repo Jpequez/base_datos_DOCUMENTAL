@@ -63,6 +63,7 @@ def main():
                         print("-----------")
                 else:
                     print("No hay documentos en la colección.")
+
         elif opcion == "6":
             print("Saliendo del programa.")
             break
