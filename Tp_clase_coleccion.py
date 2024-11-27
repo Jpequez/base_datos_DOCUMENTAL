@@ -29,7 +29,7 @@ class Coleccion(object):
          line = file.readline()
 
          while line != "":
-            d = Documento(i,parser.convertidor(line.strip()))
+            d = Documento(i,parser.convertidor(line.strip())) 
             self.agregar_documentos(d)
             i = i+1
             line = file.readline()

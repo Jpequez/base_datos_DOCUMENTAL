@@ -28,9 +28,9 @@ def main():
         
         elif opcion == "2":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
-            collection = db.obtener_coleccion(nombre_coleccion)
+            coleccion = db.obtener_coleccion(nombre_coleccion)
             ruta_csv = input("Ingrese la ruta del archivo CSV: ")
-            collection.importar_coleccion(nombre_coleccion, ruta_csv)
+            coleccion.importar_coleccion(ruta_csv)
             '''agragar funcion que informe el estado del archivo csv '''
         elif opcion == "3":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
