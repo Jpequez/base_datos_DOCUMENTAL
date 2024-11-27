@@ -22,7 +22,7 @@ class Coleccion(object):
       return f"Coleccion {self.nombre} con {len(self.documentos)} documentos"
    
    def importar_coleccion(self, ruta_archivo):
-      with open (ruta_archivo , 'rt') as file:
+      with open(ruta_archivo , 'r') as file:
          schema =file.readline().replace("\n", "")
          parser = string_A_dicc(schema)
          i = 1 
