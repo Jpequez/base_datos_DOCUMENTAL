@@ -18,5 +18,3 @@ class BasededatosDocumental (object):
     def __str__(self):
         return f"Coleccion{self.nombre} con {len(self.documentos)} documentos."
     
-
-

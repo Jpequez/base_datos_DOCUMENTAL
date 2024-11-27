@@ -26,12 +26,16 @@ def main():
             print(f"Colección '{nombre_coleccion}' creada.")
         
         elif opcion == "2":
+          nombre_coleccion = input("Ingrese el nombre de la colección: ")
+          coleccion = db.obtener_coleccion(nombre_coleccion)
+          if  coleccion:
+             ruta_csv = input("Ingrese la ruta del archivo CSV: ")
+             coleccion.importar_coleccion(ruta_csv)
+             print ("IMPORTACION EXITOSA".title())
+          else:
+              print (f"IMPORTACION FALLIDA NO EXISTE LA COLECCION {nombre_coleccion}".title())
+            
 
-            nombre_coleccion = input("Ingrese el nombre de la colección: ")
-            coleccion = db.obtener_coleccion(nombre_coleccion)
-            ruta_csv = input("Ingrese la ruta del archivo CSV: ")
-            coleccion.importar_coleccion(ruta_csv)
-            print ("IMPORTACION EXITOSA")
         elif opcion == "3":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             doc_id = int(input("Ingrese el ID del documento: "))
@@ -39,10 +43,10 @@ def main():
             if coleccion:
                 documento = coleccion.buscar_documento(doc_id)
                 if documento:
-                    print("Documento encontrado:")
+                    print("Documento encontrado:".title())
                     print(documento)
                 else:
-                    print("Documento no encontrado.")
+                    print("Documento no encontrado.".title())
             else:
                 print(f"Colección '{nombre_coleccion}' no encontrada.")
         elif opcion == "4":
@@ -63,14 +67,14 @@ def main():
                         print(doc)
                         print("-"*50)
                 else:
-                    print("No hay documentos en la colección.")
+                    print("No hay documentos en la colección.".title())
 
         elif opcion == "6":
-            print("Saliendo del programa.")
+            print("Saliendo del programa.".title())
             break
         
         else:
-            print("Opción no válida. Intente nuevamente.")
+            print("Opción no válida. Intente nuevamente.".title())
 
 if __name__ == "__main__":
     main()
