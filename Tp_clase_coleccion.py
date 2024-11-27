@@ -12,8 +12,8 @@ class Coleccion(object):
       self.documentos[documento.id] = documento
 
    def eliminar_documento(self, id_documento):
-      if id_documento in self.documentos:
-        del self.documentos[id_documento]
+        if id_documento in self.documentos:
+            del self.documentos[id_documento]
 
    def buscar_documento(self, id_documento):
       return self.documentos.get(id_documento, None)
@@ -25,7 +25,7 @@ class Coleccion(object):
       with open(ruta_archivo , 'r') as file:
          schema =file.readline().replace("\n", "")
          parser = string_A_dicc(schema)
-         i = 1 
+         i = 0 
          line = file.readline()
 
          while line != "":
@@ -34,11 +34,14 @@ class Coleccion(object):
             i = i+1
             line = file.readline()
          
+         print ("importacion exitosa ")
+         
    def lista_documentos (self, valor):
-      i = 1 
+      i = 0 
       while valor.buscar_documento(i) != None:
          print (valor.buscar_documento(i))
          i = i + 1
+         print ("-"*90)
 
 
 # c = Coleccion('Libros')

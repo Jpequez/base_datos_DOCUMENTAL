@@ -30,7 +30,7 @@ def main():
             coleccion = db.obtener_coleccion(nombre_coleccion)
             ruta_csv = input("Ingrese la ruta del archivo CSV: ")
             coleccion.importar_coleccion(ruta_csv)
-            '''agragar funcion que informe el estado del archivo csv (exitoso o reporte de un problema (error ruta)) '''
+            print ("IMPORTACION EXITOSA")
         elif opcion == "3":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             doc_id = int(input("Ingrese el ID del documento: "))
@@ -50,7 +50,7 @@ def main():
             coleccion = db.obtener_coleccion(nombre_coleccion)
             if coleccion:
                 coleccion.eliminar_documento(doc_id)
-            '''problemas con eliminar un documento.'''
+                
         elif opcion == "5":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             coleccion = db.obtener_coleccion(nombre_coleccion)
