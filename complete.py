@@ -132,3 +132,40 @@ class string_A_dicc(object):
         return dicc
     
 ''' permite la conversion de un archivo csv a diccionario '''
+
+# c = Coleccion('Libros')
+
+# libro1 = Documento(1,{'Titulo':'Python para todos', 'Autor': 'Teto Medina'})
+# libro2 = Documento(2,{'Titulo': 'Fundamentos del lenguaje ', 'Autor': 'Eduso'})
+# #agregamos un libro a nuestra collecion "libros"
+# c.agregar_documentos(libro1)
+# c.agregar_documentos(libro2)
+# #buscamos un documento
+# libro = c.buscar_documento(1)
+# print (libro.obtenervalor('Titulo'), libro.obtenervalor('Autor'))
+
+# #borramos un documento
+# c.eliminar_documento(libro.id)
+
+# #buscador para libros
+# libro = c.buscar_documento(1)
+# if libro is not None:
+#    print(libro.obtenervalor('Titulo'), libro.obtenervalor('Autor'))
+# else:
+#    print("El libro no existe mas")
+
+# funcion importar archivo 
+
+# direccion = "C:\\Users\\CHELO\\Documents\\GitHub\\base_datos_DOCUMENTAL\\datos_personales.csv"
+# prueba = Coleccion ("prueba01")
+# prueba.importar_coleccion(direccion)
+# print(prueba)
+# print(prueba.buscar_documento(2))
+# '''// se creo la clase collecion que manejara los documentos
+# puede agregar,eliminar,buscar'''
+
+
+# c = Coleccion ("prueba1 ")
+# direccion = "C:\\Users\\CHELO\\Documents\\GitHub\\base_datos_DOCUMENTAL\\datos_personales.csv"
+# c.importar_coleccion(direccion)
+# c.lista_coleccion(c)

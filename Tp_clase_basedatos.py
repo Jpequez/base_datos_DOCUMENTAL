@@ -19,9 +19,4 @@ class BasededatosDocumental (object):
         return f"Coleccion{self.nombre} con {len(self.documentos)} documentos."
     
 
-# D = Coleccion ("libros")
-
-# a = BasededatosDocumental()
-
-# a.crear_coleccion("pelis")
 

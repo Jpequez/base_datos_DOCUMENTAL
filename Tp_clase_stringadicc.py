@@ -16,8 +16,3 @@ class string_A_dicc(object):
                 i = i + 1
             return d
 
-# o = string_A_dicc(schema)
-# print(o.schema)
-
-# d = o.convertidor(row)
-# print (d)

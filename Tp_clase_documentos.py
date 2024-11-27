@@ -14,20 +14,4 @@ class Documento(object):
    def __str__(self):
       return f"Documento (id ={self.id }, contenido= {self.contenido})"
 
-# d = Documento(1,{'nombre': 'jose'})
-# print(d)
-
-# #obtenemos un valor que no existe
-# nombre = d.obtenervalor('nombre') # intencionalmente buscamos un valor que no existe dejando una imprension "no existente"
-# if not d.obtenervalor('dirececciocion'):
-#    print("no existe la dirn")
-# #obtenemos un valor existente#
-# print (d.obtenervalor('nombre'))  # cuando no se encuentra tira un none (no definido)
-# #actualizamos o agragamos un valor#
-# if not d.obtenervalor('direccion'):
-#    d.alctualizarvalor ('direccion', 'calle 12')
-# print (d.obtenervalor('direccion'))
-
-
-
 ''' // creamos una clase que maneje una coleccion de documentos , algunas funciones para modificar los contenidos '''

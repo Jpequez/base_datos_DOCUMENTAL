@@ -54,9 +54,15 @@ def main():
         elif opcion == "5":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             coleccion = db.obtener_coleccion(nombre_coleccion)
-            print (coleccion)
-            coleccion.lista_documentos(coleccion)
-            ''' falta un verficador de coleccion '''
+            if coleccion:
+                documentos = coleccion.lista_documentos()
+                if documentos:
+                    print("\n--- Lista de Documentos ---")
+                    for doc in documentos:
+                        print(doc)
+                        print("-----------")
+                else:
+                    print("No hay documentos en la colección.")
         elif opcion == "6":
             print("Saliendo del programa.")
             break
