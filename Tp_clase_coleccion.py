@@ -32,7 +32,6 @@ class Coleccion(object):
             i = i+1
             line = file.readline()
          
-         print ("importacion exitosa ")
          
    def lista_documento(self) -> list[Documento]:
       total= []
