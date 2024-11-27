@@ -1,7 +1,7 @@
 # main.py
-from Tp_clase_basedatos import BasededatosDocumental
-from Tp_clase_coleccion import Coleccion
-from Tp_clase_documentos import Documento
+from Tp_clase_basedatos import *
+from Tp_clase_coleccion import *
+from Tp_clase_documentos import *
 from Tp_clase_stringadicc import string_A_dicc
 a = Coleccion
 b = Documento
@@ -16,7 +16,7 @@ def mostrar_menu():
     return input("Seleccione una opción: ")
 
 def main():
-    db = BasededatosDocumental("MiBaseDeDatos")
+    db = BasededatosDocumental()
 
     while True:
         opcion = mostrar_menu()
@@ -28,13 +28,13 @@ def main():
         
         elif opcion == "2":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
-            collection = db.get_collection(nombre_coleccion)
+            collection = db.obtener_coleccion(nombre_coleccion)
             ruta_csv = input("Ingrese la ruta del archivo CSV: ")
             collection.import_csv(nombre_coleccion, ruta_csv)
         
         elif opcion == "3":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
-            doc_id = input("Ingrese el ID del documento: ")
+            doc_id = int(input("Ingrese el ID del documento: "))
             coleccion = db.obtener_coleccion(nombre_coleccion)
             if coleccion:
                 documento = coleccion.buscar_documento(doc_id)
@@ -52,7 +52,7 @@ def main():
             coleccion = db.obtener_coleccion(nombre_coleccion)
             if coleccion:
                 coleccion.eliminar_documento(doc_id)
-        
+             
         elif opcion == "5":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             coleccion = db.obtener_coleccion(nombre_coleccion)
