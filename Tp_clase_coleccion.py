@@ -25,7 +25,7 @@ class Coleccion(object):
       with open(ruta_archivo , 'r') as file:
          schema =file.readline().replace("\n", "")
          parser = string_A_dicc(schema)
-         i = 0 
+         i = 1 
          line = file.readline()
 
          while line != "":

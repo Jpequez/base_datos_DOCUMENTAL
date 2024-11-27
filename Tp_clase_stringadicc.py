@@ -9,7 +9,7 @@ class string_A_dicc(object):
    def convertidor(self, row):
         temp = row.split(self.separator)
         if len(temp) == len(self.schema):
-            i = 0
+            i = 1
             d = {}
             while i < len(temp):
                 d[self.schema[i]] = temp[i]

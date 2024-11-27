@@ -54,7 +54,7 @@ def main():
         elif opcion == "5":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
             coleccion = db.obtener_coleccion(nombre_coleccion)
-            print(coleccion)
+            print (coleccion)
             coleccion.lista_documentos(coleccion)
             ''' falta un verficador de coleccion '''
         elif opcion == "6":
