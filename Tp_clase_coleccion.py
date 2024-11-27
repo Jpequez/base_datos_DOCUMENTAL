@@ -1,4 +1,5 @@
 from Tp_clase_documentos import Documento
+from Tp_clase_stringadicc import string_A_dicc
 
 '''2.creamos la clase coleccion '''
 
@@ -19,6 +20,20 @@ class Coleccion(object):
 
    def __str__(self):
       return f"Coleccion {self.nombre} con {len(self.documentos)} documentos"
+   
+   def importar_coleccion(self, ruta_archivo):
+      with open (ruta_archivo , 'rt') as file:
+         schema = file.readline().replace("\n","")
+         parser = string_A_dicc(schema)
+         i = 0 
+         line = file.readline()
+
+         while line != "":
+            d = Documento(1,parser.convertidor(line))
+            self.agregar_documentos(d)
+            i = i+1
+            line = file.readline()
+         
 
 
 c = Coleccion('Libros')
@@ -42,7 +57,14 @@ if libro is not None:
 else:
    print("El libro no existe mas")
 
+# funcion importar archivo 
 
-
+direccion = "C:\\Users\CHELO\Documents\\GitHub\\base_datos_DOCUMENTAL\\datos_personales.csv"
+test = Coleccion ("prueba01")
+test.importar_coleccion(direccion)
+print(test)
+print(test.buscar_documento(1))
 '''// se creo la clase collecion que manejara los documentos
 puede agregar,eliminar,buscar'''
+
+
