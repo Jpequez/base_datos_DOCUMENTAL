@@ -33,7 +33,7 @@ def main():
              coleccion.importar_coleccion(ruta_csv)
              print ("IMPORTACION EXITOSA".title())
           else:
-              print (f"IMPORTACION FALLIDA NO EXISTE LA COLECCION {nombre_coleccion}".title())
+              print (f"IMPORTACION FALLIDA NO EXISTE LA COLECCION : {nombre_coleccion}".title())
             
 
         elif opcion == "3":
