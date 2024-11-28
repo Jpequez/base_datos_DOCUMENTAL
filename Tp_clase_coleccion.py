@@ -20,20 +20,20 @@ class Coleccion(object):
 
    
    def importar_coleccion(self, ruta_archivo):
-      with open(ruta_archivo , 'r') as file:
-         schema =file.readline().replace("\n", "")
-         parser = string_A_dicc(schema)
-         line = file.readline()
-         i = 1 #(i funciona como id inicial de los documentos y se incrementa en el siguiente while)
-
-         while line != "":
-            d = Documento(i,parser.convertidor(line.strip("\n"))) 
-            self.agregar_documentos(d)
-            i = i+1 #( i como id_incremental )
-            line = file.readline()
-         
+      with open(ruta_archivo, 'r') as file:
+        schema =file.readline().replace("\n", "")
+        parser = string_A_dicc(schema)
+        line = file.readline()
+        i = 0 #(i funciona como id inicial de los documentos y se incrementa en el siguiente while)
+ 
+        while line != "":
+          d = Documento(i,parser.convertidor(line.strip())) 
+          self.agregar_documentos(d)
+          i = i+1 #( i como id_incremental )
+          line = file.readline()
          
    def lista_documento(self):
+
       listadedocumentos = []
       for i in self.documentos:
          listadedocumentos.append(self.documentos[i])
