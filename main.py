@@ -38,9 +38,9 @@ def main():
 
         elif opcion == "3":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
-            doc_id = int(input("Ingrese el ID del documento: "))
             coleccion = db.obtener_coleccion(nombre_coleccion)
             if coleccion:
+                doc_id = int(input("Ingrese el ID del documento: "))
                 documento = coleccion.buscar_documento(doc_id)
                 if documento:
                     print("Documento encontrado:".title())
@@ -49,13 +49,25 @@ def main():
                     print("Documento no encontrado.".title())
             else:
                 print(f"Colección '{nombre_coleccion}' no encontrada.")
+
         elif opcion == "4":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
-            doc_id = int(input("Ingrese el ID del documento a eliminar: "))
             coleccion = db.obtener_coleccion(nombre_coleccion)
             if coleccion:
-                coleccion.eliminar_documento(doc_id)
-                print("Eliminacion Existosa".title())
+                doc_id = int(input("Ingrese el ID del documento a eliminar: "))
+                documento = coleccion.buscar_documento(doc_id)
+                contador= True
+                while contador:
+                 if documento:
+                    coleccion.eliminar_documento(doc_id)
+                    print("Eliminacion Existosa".title())
+                    contador = False
+                 else:
+                    print("Error , ID inexistente , intente nuevamente")  
+                    doc_id = int(input("Ingrese el ID del documento a eliminar: ")) 
+                    documento = coleccion.buscar_documento(doc_id)   
+            else:
+                print(f"no existe tal coleccion {nombre_coleccion} para poder eliminar un documento")
                 
         elif opcion == "5":
             nombre_coleccion = input("Ingrese el nombre de la colección: ")
@@ -69,7 +81,8 @@ def main():
                         print("-"*50)
                 else:
                     print("No hay documentos en la colección.".title())
-
+            else:
+                print(" NO EXISTE ESA COLECCION, INTENTE NUEVAMENTE o CREE UNA COLECCION")
         elif opcion == "6":
             print("Saliendo del programa.".title())
             break
