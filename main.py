@@ -28,12 +28,12 @@ def main():
         elif opcion == "2":
           nombre_coleccion = input("Ingrese el nombre de la colección: ")
           coleccion = db.obtener_coleccion(nombre_coleccion)
-          if  coleccion:
+          if coleccion:
              ruta_csv = input("Ingrese la ruta del archivo CSV: ")
              coleccion.importar_coleccion(ruta_csv)
              print ("IMPORTACION EXITOSA".title())
           else:
-              print (f"IMPORTACION FALLIDA NO EXISTE LA COLECCION : {nombre_coleccion}".title())
+              print (f"IMPORTACION FALLIDA NO EXISTE LA COLECCION : {nombre_coleccion}")
             
 
         elif opcion == "3":

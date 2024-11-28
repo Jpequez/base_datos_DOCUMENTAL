@@ -23,13 +23,13 @@ class Coleccion(object):
       with open(ruta_archivo , 'r') as file:
          schema =file.readline().replace("\n", "")
          parser = string_A_dicc(schema)
-         i = 1 
          line = file.readline()
+         i = 1 #(i funciona como id inicial de los documentos y se incrementa en el siguiente while)
 
          while line != "":
-            d = Documento(i,parser.convertidor(line.strip())) 
+            d = Documento(i,parser.convertidor(line.strip("\n"))) 
             self.agregar_documentos(d)
-            i = i+1
+            i = i+1 #( i como id_incremental )
             line = file.readline()
          
          
